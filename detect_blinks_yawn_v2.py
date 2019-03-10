@@ -337,10 +337,10 @@ if __name__ == "__main__":
     # save video
     if size:
         timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
-        video = cv2.VideoWriter('{}.avi'.format(timestamp), cv2.VideoWriter_fourcc(*'DIVX'), 15, size)
+        video = cv2.VideoWriter('./videos/{}.avi'.format(timestamp), cv2.VideoWriter_fourcc(*'DIVX'), 15, size)
         for f in frame_arr:
             video.write(f)
         video.release()
-        print("Successfully saved {}.avi!".format(timestamp))
+        print("Successfully saved {}.avi to 'videos' folder!".format(timestamp))
     else:
         print("Did not record video because main loop was never entered.")
